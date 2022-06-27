@@ -1,0 +1,271 @@
+esphome:
+  name: shift-register
+  includes:
+    - binSwitch.h
+    - 74HC165.h
+
+esp32:
+  board: esp32dev
+  framework:
+    type: arduino
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+  encryption:
+    key: "SlrulFkwvECyJjmEqtleajZPNFr6cDuESuoayTLjPkA="
+
+ota:
+  password: "8c869b300d3a14b80fac0d9a414c6bb3"
+
+wifi:
+  ssid: !secret wifi_ssid
+  password: !secret wifi_password
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+#  ap:
+#    ssid: "Shift-Register Fallback Hotspot"
+#    password: "vAj4kxhkP8cK"
+
+captive_portal:
+
+
+switch:
+- platform: custom
+  lambda: |-
+    auto switch1 = new binSwitch(0);
+    auto switch2 = new binSwitch(1);
+    auto switch3 = new binSwitch(2);
+    auto switch4 = new binSwitch(3);
+    auto switch5 = new binSwitch(4);
+    auto switch6 = new binSwitch(5);
+    auto switch7 = new binSwitch(6);
+    auto switch8 = new binSwitch(7);
+    auto switch9 = new binSwitch(8);
+    auto switch10 = new binSwitch(9);
+    auto switch11 = new binSwitch(10);
+    auto switch12 = new binSwitch(11);
+    auto switch13 = new binSwitch(12);
+    auto switch14 = new binSwitch(13);
+    auto switch15 = new binSwitch(14);
+    auto switch16 = new binSwitch(15);
+    auto switch17 = new binSwitch(16);
+    auto switch18 = new binSwitch(17);
+    auto switch19 = new binSwitch(18);
+    auto switch20 = new binSwitch(19);
+    auto switch21 = new binSwitch(20);
+    auto switch22 = new binSwitch(21);
+    auto switch23 = new binSwitch(22);
+    auto switch24 = new binSwitch(23);
+    auto switch25 = new binSwitch(24);
+    auto switch26 = new binSwitch(25);
+    auto switch27 = new binSwitch(26);
+    auto switch28 = new binSwitch(27);
+    auto switch29 = new binSwitch(28);
+    auto switch30 = new binSwitch(29);
+    auto switch31 = new binSwitch(30);
+    auto switch32 = new binSwitch(31);
+    App.register_component(switch1);
+    App.register_component(switch2);
+    App.register_component(switch3);
+    App.register_component(switch4);
+    App.register_component(switch5);
+    App.register_component(switch6);
+    App.register_component(switch7);
+    App.register_component(switch8);
+    App.register_component(switch9);
+    App.register_component(switch10);
+    App.register_component(switch11);
+    App.register_component(switch12);
+    App.register_component(switch13);
+    App.register_component(switch14);
+    App.register_component(switch15);
+    App.register_component(switch16);
+    App.register_component(switch17);
+    App.register_component(switch18);
+    App.register_component(switch19);
+    App.register_component(switch20);
+    App.register_component(switch21);
+    App.register_component(switch22);
+    App.register_component(switch23);
+    App.register_component(switch24);
+    App.register_component(switch25);
+    App.register_component(switch26);
+    App.register_component(switch27);
+    App.register_component(switch28);
+    App.register_component(switch29);
+    App.register_component(switch30);
+    App.register_component(switch31);
+    App.register_component(switch32);
+    return {switch1,switch2,switch3,switch4,switch5,switch6,switch7,switch8,switch9,switch10,switch11,switch12,switch13,switch14,switch15,switch16,switch17,switch18,switch19,switch20,switch21,switch22,switch23,switch24,switch25,switch26,switch27,switch28,switch29,switch30,switch31,switch32};
+
+  switches:
+    - name: "Switch 1"
+      id: switch_1
+    - name: "Switch 2"
+      id: switch_2
+    - name: "Switch 3"
+      id: switch_3
+    - name: "Switch 4"
+      id: switch_4
+    - name: "Switch 5"
+      id: switch_5
+    - name: "Switch 6"
+      id: switch_6
+    - name: "Switch 7"
+      id: switch_7
+    - name: "Switch 8"
+      id: switch_8
+    - name: "Switch 9"
+      id: switch_9
+    - name: "Switch 10"
+      id: switch_10
+    - name: "Switch 11"
+      id: switch_11
+    - name: "Switch 12"
+      id: switch_12
+    - name: "Switch 13"
+      id: switch_13
+    - name: "Switch 14"
+      id: switch_14
+    - name: "Switch 15"
+      id: switch_15
+    - name: "Switch 16"
+      id: switch_16
+    - name: "Switch 17"
+      id: switch_17
+    - name: "Switch 18"
+      id: switch_18
+    - name: "Switch 19"
+      id: switch_19
+    - name: "Switch 20"
+      id: switch_20
+    - name: "Switch 21"
+      id: switch_21
+    - name: "Switch 22"
+      id: switch_22
+    - name: "Switch 23"
+      id: switch_23
+    - name: "Switch 24"
+      id: switch_24
+    - name: "Switch 25"
+      id: switch_25
+    - name: "Switch 26"
+      id: switch_26
+    - name: "Switch 27"
+      id: switch_27
+    - name: "Switch 28"
+      id: switch_28
+    - name: "Switch 29"
+      id: switch_29
+    - name: "Switch 30"
+      id: switch_30
+    - name: "Switch 31"
+      id: switch_31
+    - name: "Switch 32"
+      id: switch_32
+
+binary_sensor:
+  - platform: custom
+    lambda: |-
+      auto X01 = new SN74HC165Component(0);
+      auto X02 = new SN74HC165Component(1);
+      auto X03 = new SN74HC165Component(2);
+      auto X04 = new SN74HC165Component(3);
+      auto X05 = new SN74HC165Component(4);
+      auto X06 = new SN74HC165Component(5);
+      auto X07 = new SN74HC165Component(6);
+      auto X08 = new SN74HC165Component(7);
+      auto X09 = new SN74HC165Component(8);
+      auto X10 = new SN74HC165Component(9);
+      auto X11 = new SN74HC165Component(10);
+      auto X12 = new SN74HC165Component(11);
+      auto X13 = new SN74HC165Component(12);
+      auto X14 = new SN74HC165Component(13);
+      auto X15 = new SN74HC165Component(14);
+      auto X16 = new SN74HC165Component(15);
+      auto X17 = new SN74HC165Component(16);
+      auto X18 = new SN74HC165Component(17);
+      auto X19 = new SN74HC165Component(18);
+      auto X20 = new SN74HC165Component(19);
+      auto X21 = new SN74HC165Component(20);
+      auto X22 = new SN74HC165Component(21);
+      auto X23 = new SN74HC165Component(22);
+      auto X24 = new SN74HC165Component(23);
+      auto X25 = new SN74HC165Component(24);
+      auto X26 = new SN74HC165Component(25);
+      auto X27 = new SN74HC165Component(26);
+      auto X28 = new SN74HC165Component(27);
+      auto X29 = new SN74HC165Component(28);
+      auto X30 = new SN74HC165Component(29);
+      auto X31 = new SN74HC165Component(30);
+      auto X32 = new SN74HC165Component(31);
+      App.register_component(X01);
+      App.register_component(X02);
+      App.register_component(X03);
+      App.register_component(X04);
+      App.register_component(X05);
+      App.register_component(X06);
+      App.register_component(X07);
+      App.register_component(X08);
+      App.register_component(X09);
+      App.register_component(X10);
+      App.register_component(X11);
+      App.register_component(X12);
+      App.register_component(X13);
+      App.register_component(X14);
+      App.register_component(X15);
+      App.register_component(X16);
+      App.register_component(X17);
+      App.register_component(X18);
+      App.register_component(X19);
+      App.register_component(X20);
+      App.register_component(X21);
+      App.register_component(X22);
+      App.register_component(X23);
+      App.register_component(X24);
+      App.register_component(X25);
+      App.register_component(X26);
+      App.register_component(X27);
+      App.register_component(X28);
+      App.register_component(X29);
+      App.register_component(X30);
+      App.register_component(X31);
+      App.register_component(X32);
+      return {X01,X02,X03,X04,X05,X06,X07,X08,X09,X10,X11,X12,X13,X14,X15,X16,X17,X18,X19,X20,X21,X22,X23,X24,X25,X26,X27,X28,X29,X30,X31,X32};
+
+    binary_sensors:
+     - name: "Input 1"
+     - name: "Input 2"
+     - name: "Input 3"
+     - name: "Input 4"
+     - name: "Input 5"
+     - name: "Input 6"
+     - name: "Input 7"
+     - name: "Input 8"
+     - name: "Input 9"
+     - name: "Input 10"
+     - name: "Input 11"
+     - name: "Input 12"
+     - name: "Input 13"
+     - name: "Input 14"
+     - name: "Input 15"
+     - name: "Input 16"
+     - name: "Input 17"
+     - name: "Input 18"
+     - name: "Input 19"
+     - name: "Input 20"
+     - name: "Input 21"
+     - name: "Input 22"
+     - name: "Input 23"
+     - name: "Input 24"
+     - name: "Input 25"
+     - name: "Input 26"
+     - name: "Input 27"
+     - name: "Input 28"
+     - name: "Input 29"
+     - name: "Input 30"
+     - name: "Input 31"
+     - name: "Input 32"
